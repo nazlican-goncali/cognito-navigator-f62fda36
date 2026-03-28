@@ -153,9 +153,10 @@ const ReadingPanel = () => {
       }
       if (!text.trim()) {
         toast({ title: "Uyarı", description: "PDF'den metin çıkarılamadı.", variant: "destructive" });
+        setPdfFileName(null);
       } else {
-        setRawText(text.trim());
-        toast({ title: "Başarılı ✅", description: `"${file.name}" başarıyla yüklendi ve metin alana yapıştırıldı.` });
+        setPdfContent(text.trim());
+        toast({ title: "Başarılı ✅", description: `"${file.name}" başarıyla yüklendi ve işlenmeye hazır.` });
       }
     } catch (err: any) {
       console.error("PDF extraction error:", err);
