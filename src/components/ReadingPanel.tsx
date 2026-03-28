@@ -392,7 +392,7 @@ const ReadingPanel = () => {
                     <h3 className="text-sm font-medium text-muted-foreground">📄 Orijinal Metin</h3>
                   </div>
                   <div className="flex-1 overflow-y-auto p-5">
-                    <p className="text-base leading-relaxed text-foreground whitespace-pre-wrap">{rawText}</p>
+                    <p className="text-base leading-relaxed text-foreground whitespace-pre-wrap">{effectiveText}</p>
                   </div>
                 </div>
 
