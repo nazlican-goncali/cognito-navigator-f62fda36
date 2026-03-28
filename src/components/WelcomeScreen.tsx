@@ -69,20 +69,20 @@ const WelcomeScreen = () => {
               />
 
               <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight mb-4">
-                Read smarter with{" "}
+                Daha akıllıca oku,{" "}
                 <span className="text-primary">NeuroStudy</span>
               </h1>
 
               <p className="text-muted-foreground text-base md:text-lg max-w-lg mx-auto mb-10 leading-relaxed">
-                AI-powered cognitive reading assistant for learners aged 7–26. 
-                Personalized, accessible, and built for the way your brain works.
+                7-26 yaş arası öğrenciler için yapay zeka destekli bilişsel okuma asistanı. 
+                Senin beyninin çalışma şekline göre kişiselleştirilmiş ve erişilebilir.
               </p>
 
               <div className="flex flex-wrap justify-center gap-3 mb-10">
                 {[
-                  { icon: Brain, label: "Cognitive Support" },
-                  { icon: BookOpen, label: "Adaptive Reading" },
-                  { icon: Sparkles, label: "AI Personalized" },
+                  { icon: Brain, label: "Bilişsel Destek" },
+                  { icon: BookOpen, label: "Adaptif Okuma" },
+                  { icon: Sparkles, label: "Yapay Zeka Özelleştirmeli" },
                 ].map(({ icon: Icon, label }) => (
                   <div
                     key={label}
@@ -95,7 +95,7 @@ const WelcomeScreen = () => {
               </div>
 
               <Button variant="friendly" size="lg" onClick={handleStart} className="group">
-                Get Started
+                Hemen Başla
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
@@ -118,16 +118,16 @@ const WelcomeScreen = () => {
                       Hoş Geldin! 👋
                     </h2>
                     <p className="text-muted-foreground text-sm">
-                      Let's personalize your reading experience
+                      Okuma deneyimini kişiselleştirelim
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-5">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">Your Name</label>
+                    <label className="text-sm font-medium text-foreground">Adın</label>
                     <Input
-                      placeholder="e.g. Alex"
+                      placeholder="Örn. Ali"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       className="h-12 rounded-xl bg-muted/40 border-border text-base placeholder:text-muted-foreground/60"
@@ -136,14 +136,14 @@ const WelcomeScreen = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">
-                      Your Age <span className="text-muted-foreground font-normal">(7–26)</span>
-                    </label>
+                     <label className="text-sm font-medium text-foreground">
+                       Yaşın <span className="text-muted-foreground font-normal">(7–26)</span>
+                     </label>
                     <Input
                       type="number"
                       min={7}
                       max={26}
-                      placeholder="e.g. 14"
+                      placeholder="Örn. 14"
                       value={age}
                       onChange={(e) => {
                         setAge(e.target.value);
@@ -186,14 +186,14 @@ const WelcomeScreen = () => {
                     disabled={!name.trim() || !age}
                     className="w-full mt-2"
                   >
-                    Continue
+                    Devam Et
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </div>
 
-                <p className="text-xs text-muted-foreground text-center mt-6">
-                  We use your age to adapt AI explanations to your level.
-                </p>
+                 <p className="text-xs text-muted-foreground text-center mt-6">
+                   Yapay zeka açıklamalarını senin seviyene uyarlamak için yaşını kullanıyoruz.
+                 </p>
               </div>
             </motion.div>
           )}
