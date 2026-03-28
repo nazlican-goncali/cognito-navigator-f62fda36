@@ -51,6 +51,7 @@ const sanitizeText = (text: string): string => {
 const TermTooltip = ({ term, definition }: { term: string; definition: string }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
+  const tooltipRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -59,6 +60,21 @@ const TermTooltip = ({ term, definition }: { term: string; definition: string })
     };
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
+  }, [open]);
+
+  /* Reposition tooltip so it stays within the viewport */
+  useEffect(() => {
+    if (!open || !tooltipRef.current) return;
+    const el = tooltipRef.current;
+    const rect = el.getBoundingClientRect();
+    const pad = 8;
+    if (rect.left < pad) {
+      el.style.transform = `translateX(${pad - rect.left}px)`;
+    } else if (rect.right > window.innerWidth - pad) {
+      el.style.transform = `translateX(${window.innerWidth - pad - rect.right}px)`;
+    } else {
+      el.style.transform = "";
+    }
   }, [open]);
 
   return (
@@ -70,7 +86,10 @@ const TermTooltip = ({ term, definition }: { term: string; definition: string })
         {term}
       </span>
       {open && (
-        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 rounded-lg border border-border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95">
+        <span
+          ref={tooltipRef}
+          className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 max-w-xs w-56 rounded-lg border border-border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 break-words"
+        >
           <span className="font-semibold text-primary">{term}:</span>{" "}
           {definition}
           <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-px w-2 h-2 rotate-45 bg-popover border-b border-r border-border" />
