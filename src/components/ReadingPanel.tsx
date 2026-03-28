@@ -384,20 +384,9 @@ const ReadingPanel = () => {
                 </div>
               </div>
 
-              {/* Split panels */}
-              <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 min-h-0">
-                {/* Original text */}
-                <div className="flex flex-col rounded-xl border border-border bg-card shadow-soft overflow-hidden">
-                  <div className="px-5 py-3 border-b border-border/60 bg-muted/30">
-                    <h3 className="text-sm font-medium text-muted-foreground">📄 Orijinal Metin</h3>
-                  </div>
-                  <div className="flex-1 overflow-y-auto p-5">
-                    <p className="text-base leading-relaxed text-foreground whitespace-pre-wrap">{effectiveText}</p>
-                  </div>
-                </div>
-
-                {/* AI Optimized panel */}
-                <div className="flex flex-col rounded-xl border-2 border-primary/20 bg-card shadow-soft overflow-hidden">
+              {/* AI Output */}
+              <div className="flex-1 min-h-0">
+                <div className="h-full flex flex-col rounded-xl border-2 border-primary/20 bg-card shadow-soft overflow-hidden">
                   <div className="px-5 py-3 border-b border-primary/10 bg-primary/[0.04]">
                     <h3 className="text-sm font-medium text-primary flex items-center gap-1.5">
                       <Sparkles className="w-4 h-4" />AI-Optimize Edilmiş Metin
