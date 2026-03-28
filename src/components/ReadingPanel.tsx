@@ -199,7 +199,7 @@ const ReadingPanel = () => {
       setQuizRevealed(false);
     } catch (err: any) {
       console.error("Simplification error:", err);
-      toast({ title: "AI Error", description: err.message || "Could not process text.", variant: "destructive" });
+      toast({ title: "AI Hatası", description: err.message || "Metin işlenemedi.", variant: "destructive" });
     } finally {
       setIsAnalyzing(false);
     }
@@ -547,7 +547,7 @@ const ReadingPanel = () => {
       </main>
 
       <footer className="relative z-10 text-center py-4 text-xs text-muted-foreground border-t border-border/60">
-        © 2026 NeuroStudy — Cognitive reading for every learner
+        © 2026 NeuroStudy — Her öğrenci için bilişsel okuma
       </footer>
     </div>
   );
