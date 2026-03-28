@@ -52,6 +52,7 @@ const TermTooltip = ({ term, definition }: { term: string; definition: string })
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLSpanElement>(null);
+  const triggerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -62,24 +63,33 @@ const TermTooltip = ({ term, definition }: { term: string; definition: string })
     return () => document.removeEventListener("click", handler);
   }, [open]);
 
-  /* Reposition tooltip so it stays within the viewport */
+  /* Position tooltip in fixed coordinates, clamped to viewport */
   useEffect(() => {
-    if (!open || !tooltipRef.current) return;
-    const el = tooltipRef.current;
-    const rect = el.getBoundingClientRect();
-    const pad = 8;
-    if (rect.left < pad) {
-      el.style.transform = `translateX(${pad - rect.left}px)`;
-    } else if (rect.right > window.innerWidth - pad) {
-      el.style.transform = `translateX(${window.innerWidth - pad - rect.right}px)`;
-    } else {
-      el.style.transform = "";
-    }
+    if (!open || !tooltipRef.current || !triggerRef.current) return;
+    const trigger = triggerRef.current.getBoundingClientRect();
+    const tip = tooltipRef.current;
+    const pad = 16;
+
+    // Place above the trigger, centered
+    let left = trigger.left + trigger.width / 2 - tip.offsetWidth / 2;
+    let top = trigger.top - tip.offsetHeight - 8;
+
+    // Clamp horizontally
+    if (left < pad) left = pad;
+    if (left + tip.offsetWidth > window.innerWidth - pad)
+      left = window.innerWidth - pad - tip.offsetWidth;
+
+    // If no room above, place below
+    if (top < pad) top = trigger.bottom + 8;
+
+    tip.style.left = `${left}px`;
+    tip.style.top = `${top}px`;
   }, [open]);
 
   return (
     <span ref={ref} className="relative inline">
       <span
+        ref={triggerRef}
         onClick={(e) => { e.stopPropagation(); setOpen(!open); }}
         className="text-primary underline decoration-primary/40 decoration-dotted underline-offset-2 cursor-pointer font-semibold hover:decoration-primary transition-colors"
       >
@@ -88,11 +98,11 @@ const TermTooltip = ({ term, definition }: { term: string; definition: string })
       {open && (
         <span
           ref={tooltipRef}
-          className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 max-w-xs w-56 rounded-lg border border-border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 break-words"
+          style={{ position: "fixed", zIndex: 100, maxWidth: "max(30vw, 300px)" }}
+          className="rounded-lg border border-border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95"
         >
-          <span className="font-semibold text-primary">{term}:</span>{" "}
-          {definition}
-          <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-px w-2 h-2 rotate-45 bg-popover border-b border-r border-border" />
+          <span className="font-semibold text-primary block" style={{ overflowWrap: "break-word", textWrap: "balance" }}>{term}:</span>
+          <span style={{ overflowWrap: "break-word", textWrap: "balance" }}>{definition}</span>
         </span>
       )}
     </span>
