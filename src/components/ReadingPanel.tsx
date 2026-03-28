@@ -167,13 +167,15 @@ const ReadingPanel = () => {
     }
   };
 
+  const effectiveText = pdfContent || rawText;
+
   const handleFocus = async () => {
-    if (!rawText.trim() || !user) return;
+    if (!effectiveText.trim() || !user) return;
     setIsAnalyzing(true);
 
     try {
       const { data, error } = await supabase.functions.invoke("simplify-text", {
-        body: { text: rawText, age: user.age, ageGroup: user.ageGroup, learningMode: mode },
+        body: { text: effectiveText, age: user.age, ageGroup: user.ageGroup, learningMode: mode },
       });
 
       if (error) throw new Error(error.message || "AI processing failed");
