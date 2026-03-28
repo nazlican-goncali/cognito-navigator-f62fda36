@@ -122,6 +122,7 @@ const ReadingPanel = () => {
   const { user } = useUser();
   const { mode, setMode } = useLearningMode();
   const [rawText, setRawText] = useState("");
+  const [pdfContent, setPdfContent] = useState<string | null>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [result, setResult] = useState<SimplifiedResult | null>(null);
