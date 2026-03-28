@@ -24,7 +24,7 @@ const WelcomeScreen = () => {
   const handleSubmit = () => {
     if (!name.trim()) return;
     if (isNaN(parsedAge) || parsedAge < 7 || parsedAge > 26) {
-      setAgeError("Please enter an age between 7 and 26");
+      setAgeError("Lütfen 7 ile 26 arasında bir yaş girin.");
       return;
     }
     setAgeError("");
