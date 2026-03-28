@@ -69,7 +69,7 @@ const WelcomeScreen = () => {
               />
 
               <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight mb-4">
-                Read smarter with{" "}
+                Daha akıllıca oku,{" "}
                 <span className="text-primary">NeuroStudy</span>
               </h1>
 
