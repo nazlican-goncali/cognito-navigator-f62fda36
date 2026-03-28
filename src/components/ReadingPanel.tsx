@@ -124,6 +124,7 @@ const ReadingPanel = () => {
         toast({ title: "Uyarı", description: "PDF'den metin çıkarılamadı.", variant: "destructive" });
       } else {
         setRawText(text.trim());
+        toast({ title: "Başarılı ✅", description: `"${file.name}" başarıyla yüklendi ve metin alana yapıştırıldı.` });
       }
     } catch (err: any) {
       console.error("PDF extraction error:", err);
