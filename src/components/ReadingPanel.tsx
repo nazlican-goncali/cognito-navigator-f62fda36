@@ -10,6 +10,9 @@ import { useUser, AGE_GROUP_CONFIG } from "@/context/UserContext";
 import { useLearningMode, LEARNING_MODES, type LearningMode } from "@/context/LearningModeContext";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import * as pdfjsLib from "pdfjs-dist";
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
 interface KeyTerm {
   term: string;
