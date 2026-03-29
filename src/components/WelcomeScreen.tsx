@@ -240,7 +240,7 @@ const WelcomeScreen = () => {
       </main>
 
       <footer className="relative z-10 text-center py-5 text-xs text-muted-foreground">
-        © 2026 NeuroStudy — Cognitive reading for every learner
+        © 2026 NeuroStudy — Her öğrenci için bilişsel okuma
       </footer>
     </div>
   );
