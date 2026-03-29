@@ -217,19 +217,19 @@ const WelcomeScreen = () => {
                 </motion.div>
 
                 <h2 className="text-2xl font-semibold text-foreground mb-2">
-                  You're all set, {name}!
+                  Harika! Her şey hazır, {name}.
                 </h2>
                 <p className="text-muted-foreground text-sm mb-3">
-                  Your personalized reading experience is ready.
+                  Senin için kişiselleştirilmiş okuma deneyimin hazır.
                 </p>
                 {config && (
                   <div className="inline-flex items-center gap-1.5 text-xs font-medium bg-secondary rounded-full px-3 py-1 mb-8 text-secondary-foreground">
-                    {config.emoji} {config.label} mode activated
+                    {config.emoji} {config.label} modu etkinleştirildi
                   </div>
                 )}
 
                 <Button variant="friendly" size="lg" className="w-full" onClick={() => navigate("/reader")}>
-                  Start Reading
+                  Okumaya Başla
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
