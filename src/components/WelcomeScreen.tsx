@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import mascot from "@/assets/neurostudy-mascot.png";
 import { ArrowRight, Sparkles, BookOpen, Brain } from "lucide-react";
 import { useUser, getAgeGroup, AGE_GROUP_CONFIG } from "@/context/UserContext";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const WelcomeScreen = () => {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ const WelcomeScreen = () => {
             Neuro<span className="text-primary">Study</span>
           </span>
         </div>
+        <ThemeToggle />
       </header>
 
       <main className="relative z-10 flex-1 flex items-center justify-center px-4 pb-12">
