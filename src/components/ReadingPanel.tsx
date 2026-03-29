@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useUser, AGE_GROUP_CONFIG } from "@/context/UserContext";
 import { useLearningMode, LEARNING_MODES, type LearningMode } from "@/context/LearningModeContext";
+import ThemeToggle from "@/components/ThemeToggle";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import * as pdfjsLib from "pdfjs-dist";
@@ -259,6 +260,7 @@ const ReadingPanel = () => {
             <ArrowLeft className="w-4 h-4 mr-1" />
             Ana Sayfa
           </Button>
+          <ThemeToggle />
         </div>
       </header>
 

@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { UserProvider } from "@/context/UserContext";
 import { LearningModeProvider } from "@/context/LearningModeContext";
+import ThemeProvider from "@/components/ThemeProvider";
 import Index from "./pages/Index.tsx";
 import Reader from "./pages/Reader.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -16,6 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <ThemeProvider>
       <UserProvider>
         <LearningModeProvider>
           <BrowserRouter>
@@ -28,6 +30,7 @@ const App = () => (
           </BrowserRouter>
         </LearningModeProvider>
       </UserProvider>
+      </ThemeProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
