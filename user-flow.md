@@ -1,28 +1,42 @@
-### 🔄 NeuroStudy Kullanıcı Akışı (User Flow)
+NeuroStudy Kullanıcı Akışı (User Flow)
+NeuroStudy, statik bir metni kişiselleştirilmiş bir öğrenme deneyimine dönüştürmek için 6 temel adımdan oluşan "Bilişsel Akış" (Cognitive Flow) modelini izler:
 
-NeuroStudy, karmaşık akademik içerikleri kişiselleştirilmiş bir öğrenme yolculuğuna dönüştürmek için şu adımları izler:
+1. Giriş ve Kişiselleştirme (Onboarding)
+Profil: Kullanıcı adını girer.
 
-1. **Giriş ve Kişiselleştirme:** 
-   - Kullanıcı uygulamayı açar, adını girer.
-   - Bilişsel seviyesini belirlemek için yaş grubunu seçer (7-12, 13-18, 19-26).
-   - **Tema Seçimi:** Göz yorgunluğuna göre Gündüz (Soft Cream) veya Gece (Dark Mode) tercihini yapar.
+Tema Seçimi: Göz sağlığını korumak için Gündüz (Soft Cream) veya Gece (Dark Mode) modunu seçer.
 
-2. **İçerik Girişi:** 
-   - Kullanıcı, anlamakta zorlandığı akademik metni veya ders notunu giriş alanına yapıştırır.
-   - "Odaklan" butonuna tıklar.
+Bilişsel Seviye: Metnin pedagojik tonunu belirlemek için yaş grubunu seçer (7-12 Çocuk, 13-18 Genç, 19-26 Üniversite).
 
-3. **Yapay Zeka İşleme (Gemini API):**
-   - AI, metni seçilen yaş grubuna göre semantik olarak yeniden kurgular.
-   - Metni "bilişsel parçalara" (chunking) ayırır.
-   - Bölüm sonlarına Sokratik sorgulama soruları ekler.
+2. Öğrenme İhtiyacı Seçimi (Cognitive Modes)
+Kullanıcı, metnin hangi zihinsel modda işleneceğine karar verir:
 
-4. **Okuma Stüdyosu:** 
-   - Ekran ikiye bölünür: Sol tarafta orijinal referans metin, sağ tarafta AI tarafından optimize edilmiş "Nöro-Dostu" metin görünür.
-   - Biyonik Okuma modu aktif edilerek odaklanma hızı artırılır.
+⚡ Hızlı ve Odaklı: Biyonik okuma desteğiyle hızlı tarama ve ana fikir odaklı çıktı.
 
-5. **Etkileşimli Kontrol Noktaları:** 
-   - Kullanıcı her 3-4 paragrafta bir durdurulur ve yaşa uygun bir soruyla karşılaşır.
-   - Doğru/Yanlış cevaplara göre empatik geri bildirimler (Confidence AI) alır.
+🧠 Görsel Hafıza: Emoji çapaları, geniş boşluklar ve görsel analogilerle kalıcı öğrenme.
 
-6. **Tamamlama:** 
-   - Metin bittiğinde kullanıcıya başarı özeti sunulur ve öğrenme motivasyonu pekiştirilir.
+🔬 Derinlemesine Analiz: Akademik derinlik, detaylı açıklamalar ve kapsamlı sorgulama.
+
+3. Veri Girişi (Input Phase)
+Kullanıcı anlamakta zorlandığı metni manuel olarak yapıştırır veya PDF dosyasını sisteme yükler.
+
+"Odaklan" butonuna tıklar.
+
+4. Yapay Zeka İşleme (Processing)
+Gemini API, seçilen yaş grubuna ve öğrenme moduna göre metni semantik olarak yeniden inşa eder.
+
+Uzun içerikler "yutulabilir" bilişsel parçalara (chunking) bölünür.
+
+Metin akışına Sokratik sorgulama noktaları yerleştirilir.
+
+5. Odaklanma Modu (Focus View)
+Dönüşüm tamamlandığında uygulama tam odaklanma moduna geçer.
+
+Dikkat dağıtıcı giriş alanları ve orijinal referans metin gizlenir. Ekranda sadece AI tarafından optimize edilmiş, seçilen moda uygun interaktif içerik kalır.
+
+6. İnteraktif Deneyim ve Motivasyon
+Check-points: Kullanıcı her 3-4 paragrafta bir durdurulur ve yaşa uygun bir soruyla karşılaşır.
+
+Confidence AI: Yanlış cevaplarda bile öğrencinin çabasını ödüllendiren empatik geri bildirimler sunulur.
+
+Tamamlama: Süreç bittiğinde kullanıcıya başarı özeti sunularak öğrenme döngüsü kapatılır.
