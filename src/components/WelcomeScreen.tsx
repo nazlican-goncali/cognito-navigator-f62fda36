@@ -83,7 +83,7 @@ const WelcomeScreen = () => {
                 {[
                   { icon: Brain, label: "Bilişsel Destek" },
                   { icon: BookOpen, label: "Adaptif Okuma" },
-                  { icon: Sparkles, label: "Yapay Zeka Özelleştirmeli" },
+                  { icon: Sparkles, label: "Kişiselleştirilmiş Öğrenme" },
                 ].map(({ icon: Icon, label }) => (
                   <div
                     key={label}

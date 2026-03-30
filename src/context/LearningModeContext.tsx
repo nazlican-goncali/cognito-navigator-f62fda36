@@ -14,7 +14,7 @@ export const LEARNING_MODES: LearningModeConfig[] = [
     id: "fast",
     label: "Hızlı ve Odaklı",
     emoji: "⚡",
-    description: "Madde işaretleri, kısa ve vurucu bilgiler, bionic reading",
+    description: "Göz yorgunluğunu azaltan, odaklanma destekli okuma",
   },
   {
     id: "visual",
