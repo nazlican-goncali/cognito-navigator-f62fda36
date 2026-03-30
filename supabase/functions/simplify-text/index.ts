@@ -125,7 +125,7 @@ YAPI FARKINDALIK KURALLARI:
   }
 }
 
-NOT: quiz alanı sadece "deep" modunda zorunludur. Diğer modlarda null olabilir.`;
+NOT: "deep" modunda her chunk içinde ayrı bir quiz alanı zorunludur. Üst seviye quiz alanını null yap. Diğer modlarda chunk quiz alanı ve üst seviye quiz alanı null olabilir.`;
 
     const response = await fetch(
       "https://ai.gateway.lovable.dev/v1/chat/completions",
