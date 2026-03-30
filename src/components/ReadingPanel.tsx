@@ -201,6 +201,8 @@ const ReadingPanel = () => {
       setActiveChunk(0);
       setQuizAnswer(null);
       setQuizRevealed(false);
+      setChunkQuizAnswers({});
+      setChunkQuizRevealed({});
     } catch (err: any) {
       console.error("Simplification error:", err);
       toast({ title: "AI Hatası", description: err.message || "Metin işlenemedi.", variant: "destructive" });
@@ -214,6 +216,8 @@ const ReadingPanel = () => {
     setActiveChunk(0);
     setQuizAnswer(null);
     setQuizRevealed(false);
+    setChunkQuizAnswers({});
+    setChunkQuizRevealed({});
   };
 
   const handleNextChunk = () => {
