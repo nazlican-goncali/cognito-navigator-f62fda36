@@ -70,7 +70,7 @@ const WelcomeScreen = () => {
                 transition={{ delay: 0.15, type: "spring", stiffness: 180 }}
               />
 
-              <h1 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-5xl font-bold text-foreground tracking-tight leading-tight mb-4 whitespace-nowrap">
+              <h1 className="text-[clamp(1.4rem,5vw,3rem)] font-bold text-foreground tracking-tight leading-tight mb-4 text-center">
                 Daha özgürce oku, NeuroStudy
               </h1>
 
