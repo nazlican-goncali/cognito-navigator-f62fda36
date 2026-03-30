@@ -548,35 +548,7 @@ const ReadingPanel = () => {
                           })()}
                         </div>
 
-                        {/* Quiz — only for deep mode */}
-                        {mode === "deep" && result.quiz && (
-                          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-xl border border-border bg-muted/30 p-5">
-                            <h4 className="text-sm font-semibold text-foreground mb-3">🧪 Anlama Sorusu</h4>
-                            <p className="text-sm text-foreground mb-3">{result.quiz.question}</p>
-                            <div className="flex flex-col gap-2">
-                              {result.quiz.options.map((opt, idx) => {
-                                const isCorrect = idx === result.quiz!.correctIndex;
-                                const isSelected = quizAnswer === idx;
-                                return (
-                                  <button
-                                    key={idx}
-                                    onClick={() => { if (!quizRevealed) { setQuizAnswer(idx); setQuizRevealed(true); } }}
-                                    disabled={quizRevealed}
-                                    className={cn(
-                                      "text-left text-sm px-4 py-2.5 rounded-lg border transition-all",
-                                      !quizRevealed && "hover:bg-accent cursor-pointer border-border",
-                                      quizRevealed && isCorrect && "border-green-500 bg-green-500/10 text-green-700",
-                                      quizRevealed && isSelected && !isCorrect && "border-destructive bg-destructive/10 text-destructive",
-                                      quizRevealed && !isSelected && !isCorrect && "opacity-50 border-border",
-                                    )}
-                                  >
-                                    <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>{opt}
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          </motion.div>
-                        )}
+
                       </>
                     ) : (
                       <div className="flex items-center justify-center h-full">
