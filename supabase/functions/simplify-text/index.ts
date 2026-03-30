@@ -47,7 +47,7 @@ SERT BİÇİM KURALLARI — BU KURALLARA UYMAZSAN YANIT BAŞARISIZ SAYILIR:
 SERT BİÇİM KURALLARI — BU KURALLARA UYMAZSAN YANIT BAŞARISIZ SAYILIR:
 - Ayrıntılı, akademik paragraflar burada SERBEST ve TERCİH EDİLİR.
 - Karmaşık terminolojiyi, kronolojik akışı, neden-sonuç ilişkilerini ve kanıt zincirini koru.
-- Metni 3-4 mantıksal bölüme ayır. Her bölüm belgenin farklı bir alt konusunu detaylı ama anlaşılır biçimde açıklasın.
+- Metni SABİT bir parça sayısına BÖLME. Metnin uzunluğuna ve içerik yoğunluğuna göre DİNAMİK olarak bölümle: kısa metinler 2-3, orta metinler 4-5, uzun ve yoğun metinler 6-8 chunk olabilir. Her bölüm belgenin farklı bir alt konusunu detaylı ama anlaşılır biçimde açıklasın.
 - Her chunk İÇİN ayrı bir quiz nesnesi ZORUNLU: O bölüme özel, düşündürücü bir 4 seçenekli çoktan seçmeli soru üret. options dizisi tam 4 eleman içermeli, correctIndex doğru cevabın 0-bazlı indeksini göstermeli.
 - chunks dizisindeki her elemanın "quiz" alanı dolu olmalı. Üst seviye "quiz" alanını null yap.
 - Metin içinde kalın vurgu gerekiyorsa sadece HTML <b> etiketi kullan. Markdown yıldız (**) YASAK.`,
