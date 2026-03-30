@@ -27,6 +27,7 @@ interface TextChunk {
   content: string;
   analogy?: string | null;
   keyTerms?: KeyTerm[];
+  quiz?: Quiz | null;
 }
 
 interface Quiz {
@@ -130,6 +131,8 @@ const ReadingPanel = () => {
   const [activeChunk, setActiveChunk] = useState(0);
   const [quizAnswer, setQuizAnswer] = useState<number | null>(null);
   const [quizRevealed, setQuizRevealed] = useState(false);
+  const [chunkQuizAnswers, setChunkQuizAnswers] = useState<Record<number, number | null>>({});
+  const [chunkQuizRevealed, setChunkQuizRevealed] = useState<Record<number, boolean>>({});
   const [isExtractingPdf, setIsExtractingPdf] = useState(false);
   const [pdfFileName, setPdfFileName] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
