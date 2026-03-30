@@ -494,6 +494,42 @@ const ReadingPanel = () => {
                                   </div>
                                 )}
 
+                                {/* Per-chunk quiz — deep mode */}
+                                {mode === "deep" && chunk.quiz && (
+                                  <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="rounded-xl border border-border bg-muted/30 p-4 mt-3">
+                                    <h4 className="text-sm font-semibold text-foreground mb-2">🧪 Bölüm Sorusu</h4>
+                                    <p className="text-sm text-foreground mb-3">{chunk.quiz.question}</p>
+                                    <div className="flex flex-col gap-2">
+                                      {chunk.quiz.options.map((opt, idx) => {
+                                        const isCorrect = idx === chunk.quiz!.correctIndex;
+                                        const isSelected = chunkQuizAnswers[activeChunk] === idx;
+                                        const revealed = chunkQuizRevealed[activeChunk] || false;
+                                        return (
+                                          <button
+                                            key={idx}
+                                            onClick={() => {
+                                              if (!revealed) {
+                                                setChunkQuizAnswers(prev => ({ ...prev, [activeChunk]: idx }));
+                                                setChunkQuizRevealed(prev => ({ ...prev, [activeChunk]: true }));
+                                              }
+                                            }}
+                                            disabled={revealed}
+                                            className={cn(
+                                              "text-left text-sm px-4 py-2.5 rounded-lg border transition-all",
+                                              !revealed && "hover:bg-accent cursor-pointer border-border",
+                                              revealed && isCorrect && "border-green-500 bg-green-500/10 text-green-700",
+                                              revealed && isSelected && !isCorrect && "border-destructive bg-destructive/10 text-destructive",
+                                              revealed && !isSelected && !isCorrect && "opacity-50 border-border",
+                                            )}
+                                          >
+                                            <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>{opt}
+                                          </button>
+                                        );
+                                      })}
+                                    </div>
+                                  </motion.div>
+                                )}
+
                                 {/* Navigation */}
                                 <div className="flex items-center justify-between mt-4">
                                   <Button variant="ghost" size="sm" onClick={handlePrevChunk} disabled={activeChunk === 0} className="text-muted-foreground">
