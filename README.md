@@ -10,6 +10,8 @@ NeuroStudy, yapay zekayı (Gemini API) bir "bilişsel antrenör" olarak konumlan
 ✨ Öne Çıkan Özellikler
 Age-Adaptive Engine: Metni 7-26 yaş aralığındaki kullanıcılar için saniyeler içinde pedagojik olarak yeniden kurgular.
 
+⚡ Kullanım Notu: NeuroStudy, bilişsel yükü azaltmak amacıyla kısa ve orta uzunluktaki metinler ile direkt kopyala-yapıştır işlemlerinde maksimum performans ve hız sunacak şekilde optimize edilmiştir. Bu sayede öğrenci, odak süresini aşmadan en verimli çıktıyı saniyeler içinde alır.
+
 3 Farklı Odak Modu (Öğrenme İhtiyacı):
 
 ⚡ Hızlı ve Odaklı: Biyonik okuma desteğiyle göz yorgunluğunu azaltan hızlı tarama.
