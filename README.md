@@ -29,7 +29,7 @@ Sokratik Sorgulama: Her bölüm sonunda AI, bağlamsal sorularla kullanıcıyı 
 🚀 Canlı Demo
 Yayın Linki: https://project-neuro-study.lovable.app
 
-🎥 Demo Videosu: (https://youtu.be/2OzGpjterKc)
+🎥 Demo Videosu: https://youtu.be/2OzGpjterKc
 
 🛠️ Kullanılan Teknolojiler
 Frontend: React, Tailwind CSS (Modern, hızlı ve duyarlı arayüz)
@@ -48,7 +48,7 @@ Teknik Gereksinimler (prd.md)
 Kullanıcı Akışı (user-flow.md)
 
 ⚙️ Nasıl Çalıştırılır?
-Bu depoyu bilgisayarınıza klonlayın: git clone [repo-linki]
+Bu depoyu bilgisayarınıza klonlayın: git clone https://github.com/nazlican-goncali/cognito-navigator-f62fda36/tree/main
 
 Proje klasörüne gidin: cd NeuroStudy.prd
 
