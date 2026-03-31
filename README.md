@@ -27,7 +27,7 @@ Sokratik Sorgulama: Her bölüm sonunda AI, bağlamsal sorularla kullanıcıyı 
 🚀 Canlı Demo
 Yayın Linki: https://project-neuro-study.lovable.app
 
-🎥 Demo Videosu: [Buraya Loom veya YouTube Linkini Yapıştır]
+🎥 Demo Videosu: (https://youtu.be/2OzGpjterKc)
 
 🛠️ Kullanılan Teknolojiler
 Frontend: React, Tailwind CSS (Modern, hızlı ve duyarlı arayüz)
